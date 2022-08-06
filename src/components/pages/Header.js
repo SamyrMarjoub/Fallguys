@@ -5,19 +5,21 @@ import ShildLogo from '../images/shildlogo.svg'
 import Language from '../images/language-icon.svg'
 import Account from '../images/account-svg.svg'
 import Burguer from '../images/burguer.svg'
+import x from '../images/x.svg'
 class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
             hover1: false,
-            hover2: false
+            hover2: false,
+            MenuCont: 1
 
         }
         this.hoverFunction = this.hoverFunction.bind(this)
         this.hoverFunctionLa = this.hoverFunctionLa.bind(this)
         this.hoverFunctionLaN = this.hoverFunctionLaN.bind(this)
         this.hoverFunctionN = this.hoverFunctionN.bind(this)
-
+        this.abrirMenu = this.abrirMenu.bind(this)
     }
     hoverFunction() {
         const menulangugage = document.querySelector('.languages')
@@ -41,7 +43,7 @@ class Header extends Component {
                 const menulangugage = document.querySelector('.languages')
                 menulangugage.classList.remove('displayL')
                 menulangugage.classList.add('displayLN')
-                this.setState({hover1:false})
+                this.setState({ hover1: false })
             }
         }, 200)
 
@@ -50,7 +52,38 @@ class Header extends Component {
         const menulangugage = document.querySelector('.languages')
         menulangugage.classList.remove('displayL')
         menulangugage.classList.add('displayLN')
-        this.setState({hover2:false})
+        this.setState({ hover2: false })
+
+    }
+    abrirMenu() {
+        // eslint-disable-next-line react/no-direct-mutation-state
+        this.setState({ MenuCont: ++this.state.MenuCont })
+        const MenuMobile = document.querySelector('.menu-mobile')
+        const darkscreen = document.querySelector('.darkscreen')
+        const burguerimg = document.querySelector('.burguerimg')
+        const Burguerdiv = document.querySelector('.burguer-div')
+        if (this.state.MenuCont % 2 === 0) {
+            MenuMobile.classList.remove('displayLN')
+            darkscreen.classList.remove('displayLN')
+            MenuMobile.classList.add('displayLB')
+            darkscreen.classList.add('displayLB')
+            document.body.style.overflow = 'Hidden'
+            burguerimg.src = x
+            burguerimg.style.width = '25px'
+            burguerimg.classList.add('white')
+            Burguerdiv.classList.add('transparent')
+        } else {
+            MenuMobile.classList.remove('displayLB')
+            darkscreen.classList.remove('displayLB')
+            MenuMobile.classList.add('displayLN')
+            darkscreen.classList.add('displayLN')
+            document.body.style.overflow = 'Visible'
+            burguerimg.src = Burguer
+            burguerimg.style.width = '35px'
+            Burguerdiv.classList.remove('transparent')
+            burguerimg.classList.remove('white')
+
+        }
 
     }
     render() {
@@ -67,7 +100,7 @@ class Header extends Component {
                             </div>
                             <div className="burguer-div-l">
                                 <div className="burguer-div">
-                                    <img src={Burguer} alt="" />
+                                    <img src={Burguer} alt="" onClick={this.abrirMenu} className='burguerimg' />
                                 </div>
                             </div>
                         </div>
@@ -110,7 +143,45 @@ class Header extends Component {
 
                     </div>
                 </div>
+                <div className="menu-mobile">
+                    <div className="mbr">
+                        <div className="menu-m-c-m">
+                            <div className="menum"><div className="menu-m-c"><span>CURRENT SEASON</span></div></div>
+                            <div className="menum"><div className="menu-m-c"><span>PREVIOUS SEASON</span></div> </div>
+                            <div className="menum"><div className="menu-m-c"><span>NEWS</span></div> </div>
+                            <div className="menum"><div className="menu-m-c"><span>SEASON PASS</span></div> </div>
+                            <div className="menum lmm"><div className="menu-m-c"><span>MERCH</span></div> </div>
+
+                        </div>
+                        <div className="bottom-menu">
+                            <div className="dv1">
+                                <div className="dv1f">
+                                    <div className="onc">
+                                    <img src={Account} id='conta' alt="" />
+                                    <span className="span-account" style={{margin:'0px'}}>ACCOUNT</span>
+                                    </div>
+                                 
+                                </div>
+                                <div className="dv2f">
+                                    <div className="onc">
+                                        <img src={Language} id='teste' alt="" onMouseMove={this.hoverFunction} onMouseLeave={this.hoverFunctionN} style={{ margin: '0px' }} />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div className="dv2">
+                                <h2>DOWNLOAD</h2>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div className="darkscreen">
+
+                </div>
             </header>
+
         )
     }
 }
