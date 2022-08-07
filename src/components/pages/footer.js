@@ -61,7 +61,7 @@ class Footer extends Component {
                         <div className="livrediv">
                             <div className="columndiv">
                                 <span className="name">BRAZIL</span>
-                                <div className="livre"><h2>L</h2></div>
+                                    <div className="livre"><h2>L</h2></div>
                             </div>
                         </div>
                     </div>

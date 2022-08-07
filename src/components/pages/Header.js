@@ -6,6 +6,8 @@ import Language from '../images/language-icon.svg'
 import Account from '../images/account-svg.svg'
 import Burguer from '../images/burguer.svg'
 import x from '../images/x.svg'
+import { HashLink as Link } from 'react-router-hash-link'
+
 class Header extends Component {
     constructor(props) {
         super(props)
@@ -106,11 +108,14 @@ class Header extends Component {
                         </div>
                         <div className="inline-links-list">
                             <ul className="header-list">
-                                <li>CURRENT SEASON</li>
-                                <li>PREVIOUS SEASONS</li>
-                                <li>NEWS</li>
-                                <li>SEASON PASS</li>
-                                <li className="nomargin">MERCH</li>
+                                <Link to={'*'}>
+                                    <li>CURRENT SEASON</li>
+                                    <li>PREVIOUS SEASONS</li>
+                                    <li>NEWS</li>
+                                    <li>SEASON PASS</li>
+                                    <li className="nomargin">MERCH</li>
+                                </Link>
+
                             </ul>
                         </div>
                     </div>
@@ -137,8 +142,10 @@ class Header extends Component {
                                 </div>
                             </div>
                             <img src={Account} id='conta' alt="" />
-                            <span className="span-account">ACCOUNT</span>
-                            <button className="button-download">DOWNLOAD</button>
+                            <Link to={'*'}>
+                                <span className="span-account">ACCOUNT</span>
+                                <button className="button-download">DOWNLOAD</button>
+                            </Link>
                         </div>
 
                     </div>
@@ -157,10 +164,10 @@ class Header extends Component {
                             <div className="dv1">
                                 <div className="dv1f">
                                     <div className="onc">
-                                    <img src={Account} id='conta' alt="" />
-                                    <span className="span-account" style={{margin:'0px'}}>ACCOUNT</span>
+                                        <img src={Account} id='conta' alt="" />
+                                        <span className="span-account" style={{ margin: '0px' }}>ACCOUNT</span>
                                     </div>
-                                 
+
                                 </div>
                                 <div className="dv2f">
                                     <div className="onc">

@@ -9,11 +9,11 @@ const Rotas = () => {
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Header />
             <Routes>
-                <Route exact path='/' element={<Home />} />
-                <Route path="*" element={<NotFound />} />
+                <Route exact index path='/' element={<Home />}/>
+                <Route path="*" element={<NotFound />}/>
             </Routes>
             <Footer />
-        </BrowserRouter>
+        </BrowserRouter >
     )
 
 }

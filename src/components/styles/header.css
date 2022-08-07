@@ -140,7 +140,10 @@ header {
     cursor: pointer;
     color: rgb(96, 233, 255);
 }
-
+a{
+    color: white;
+    text-decoration: none;
+}
 .languages ul {
     padding: 0;
     margin: 0;
