@@ -34,7 +34,7 @@ class Footer extends Component {
                             <div className="minidiv">
                                 <Link to='#Header' smooth={true}>
                                     <span>BACK TO TOP</span>
-                                    <img src={arrow} className='arrow' />
+                                    <img src={arrow} className='arrow' alt="" />
                                 </Link>
                             </div>
                         </div>

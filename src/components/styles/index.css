@@ -2,8 +2,20 @@
 @import url("https://cdn.rawgit.com/mfd/e7842774e037edf15919037594a79b2b/raw/665bdfc532094318449f1010323c84013d5af953/graphik.css");
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500&display=swap');
 
-
-
+html{
+height: auto;
+}
+body{
+    height: auto;
+}
+footer {
+    min-height: 500px;
+    background-color: rgb(27, 25, 30);
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+}
 main {
     width: 100%;
     background-image: url('../images/fallguys-keyart-no-logo-24b-3840x2160-3840x2160-a2f46d1332f6-compressed-3840x2160-6a5cb646a5b3.webp');
@@ -329,13 +341,7 @@ button {
     max-width: 250px;
 }
 
-footer {
-    min-height: 500px;
-    background-color: rgb(27, 25, 30);
-    display: flex;
-    height: auto;
-    justify-content: center;
-}
+
 
 footer a {
     text-decoration: none;

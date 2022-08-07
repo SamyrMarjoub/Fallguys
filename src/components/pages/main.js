@@ -12,9 +12,15 @@ import left from '../images/left.svg'
 import right from '../images/right.svg'
 import guyimg from '../images/guy.webp'
 class Main extends Component {
+    slideshowRight() {
+
+    }
+    slideshowLeft() {
+
+    }
     render() {
         return (
-            <>
+            <div className="MainHome">
 
                 <main className="">
                     <div className="download-div">
@@ -65,6 +71,7 @@ class Main extends Component {
                                             </div>
                                             <h4 className="resume">IT’S HAMMER TIME: CLAN OF YEETUS IS HERE!</h4>
                                         </div>
+
                                     </div>
                                     <div>
                                         <div className="s1 color">
@@ -85,8 +92,8 @@ class Main extends Component {
                                         </div>
                                         <div className="grid7">
                                             <div className="grid7divsvg">
-                                                <img src={left} className='left' alt='' />
-                                                <img src={right} alt='' />
+                                                <img src={left} className='left' alt='' onClick={this.slideshowLeft} />
+                                                <img src={right} alt='' onClick={this.slideshowRight} />
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +119,7 @@ class Main extends Component {
                     </div>
                 </div>
 
-            </>
+            </div>
 
         )
     }
